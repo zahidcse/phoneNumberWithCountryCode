@@ -3,6 +3,7 @@
         <div class="drop-down-country-list"><span>Select Country</span> <a style="float:right">&nbsp;&nbsp;&darr;</a></div>
         @php //$countries = \App\Country::get(); @endphp
         <div class="country-dropdown">
+        <input class="form-control search-country" />
         <ul>
         /* Dynamic array with country code and country name*/
         @foreach($countries as $c)
