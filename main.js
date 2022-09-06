@@ -1,4 +1,5 @@
-jQuery( document ).ready(function() {
+<script>
+                jQuery( document ).ready(function() {
                      $('.drop-down-country-list').click(function(){
                         $('.country-dropdown').show();
                         $('.drop-down-country-list').hide();
@@ -14,4 +15,15 @@ jQuery( document ).ready(function() {
                         $('.drop-down-country-list span').text(cname+' ('+pcode+')');
                         
                     })
+                    
+                    jQuery(".search-country").keyup(function () {
+                        var filter = jQuery(this).val();
+                        jQuery(".country-dropdown ul li").each(function () {
+                            if (jQuery(this).text().search(new RegExp(filter, "i")) < 0) {
+                                jQuery(this).hide();
+                            } else {
+                                jQuery(this).show()
+                            }
+                        });
+                    });
                 })
